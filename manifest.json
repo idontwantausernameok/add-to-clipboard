@@ -1,0 +1,17 @@
+{
+  "author": "igorlogius",
+  "description": "prepend linebreak seperated links to clipboard",
+  "icons": {
+  },
+  "background": {
+	"scripts": ["background.js"]
+  },
+  "manifest_version": 2,
+  "name": "prepend-to-clipboard",
+  "permissions": [
+    "clipboardWrite",
+    "clipboardRead",
+    "menus"
+  ],
+  "version": "1.0.0"
+}
