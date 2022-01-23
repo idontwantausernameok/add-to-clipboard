@@ -4,7 +4,7 @@ const manifest = browser.runtime.getManifest();
 const extname = manifest.name;
 
 browser.menus.create({
-	id: extname,
+	id: extname + "-prepend",
 	title: "Prepend",
 	documentUrlPatterns: [ "<all_urls>" ],
 	contexts: ["page", "link", "image", "editable", "selection"],
@@ -20,7 +20,7 @@ browser.menus.create({
 });
 
 browser.menus.create({
-	id: extname,
+	id: extname + "-append",
 	title: "Append",
 	documentUrlPatterns: [ "<all_urls>" ],
 	contexts: ["page", "link", "image", "editable", "selection"],
@@ -29,7 +29,7 @@ browser.menus.create({
 		if(temporary){ console.log('selected', selected); }
 		let content = await navigator.clipboard.readText();
 		if(temporary){ console.log('content', content); }
-		content = content + "\n" + selected + "\n";
+		content = content + "\n" + selected;
 		await navigator.clipboard.writeText(content);
 		if(temporary){ console.log('content', content); }
 	}
