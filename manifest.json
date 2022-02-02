@@ -2,6 +2,7 @@
   "author": "igorlogius",
   "description": "append or prepend linebreak seperated selections to the clipboard",
   "icons": {
+      "128": "icon.png"
   },
   "background": {
 	"scripts": ["background.js"]
@@ -13,5 +14,5 @@
     "clipboardRead",
     "menus"
   ],
-  "version": "1.1.1"
+  "version": "1.1.2"
 }
