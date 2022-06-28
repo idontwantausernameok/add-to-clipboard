@@ -1,5 +1,6 @@
+/* global browser */
 
-const temporary = browser.runtime.id.endsWith('@temporary-addon'); // debugging?
+//const temporary = browser.runtime.id.endsWith('@temporary-addon'); // debugging?
 const manifest = browser.runtime.getManifest();
 const extname = manifest.name;
 
@@ -9,7 +10,7 @@ browser.menus.create({
 	title: "Insert",
 	documentUrlPatterns: [ "<all_urls>" ],
 	contexts: ["page", "link", "image", "editable", "selection"],
-	onclick: async function(clickData,tab) {
+	onclick: async function(clickData/*,tab*/) {
 		const selected = clickData.linkUrl || clickData.selectionText || clickData.srcUrl || '';
 		await navigator.clipboard.writeText(selected);
 	}
@@ -19,7 +20,7 @@ browser.menus.create({
 	title: "Prepend",
 	documentUrlPatterns: [ "<all_urls>" ],
 	contexts: ["page", "link", "image", "editable", "selection"],
-	onclick: async function(clickData,tab) {
+	onclick: async function(clickData/*,tab*/) {
 		const selected = clickData.linkUrl || clickData.selectionText || clickData.srcUrl || '';
 		let content = await navigator.clipboard.readText();
         content = selected + "\n" + content;
@@ -32,7 +33,7 @@ browser.menus.create({
 	title: "Append",
 	documentUrlPatterns: [ "<all_urls>" ],
 	contexts: ["page", "link", "image", "editable", "selection"],
-	onclick: async function(clickData,tab) {
+	onclick: async function(clickData/*,tab*/) {
 		const selected = clickData.linkUrl || clickData.selectionText || clickData.srcUrl || '';
 		let content = await navigator.clipboard.readText();
         content = selected + "\n" + content;

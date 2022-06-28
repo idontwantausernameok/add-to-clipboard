@@ -1,18 +1,18 @@
 {
   "author": "igorlogius",
-  "description": "append or prepend linebreak seperated selections to the clipboard",
-  "icons": {
-      "128": "icon.png"
-  },
   "background": {
 	"scripts": ["background.js"]
   },
+  "description": "Append or prepend linebreak seperated selections to the clipboard",
+  "icons": {
+      "128": "icon.png"
+  },
   "manifest_version": 2,
-  "name": "add-to-clipboard",
+  "name": "Add To Clipboard",
   "permissions": [
     "clipboardWrite",
     "clipboardRead",
     "menus"
   ],
-  "version": "1.1.2"
+  "version": "1.1.3"
 }
